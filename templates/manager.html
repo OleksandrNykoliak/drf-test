@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Менеджери</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ім'я</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Email</th>
+            <th scope="col">Дата створення</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for manager in managers %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ manager.name }}</td>
+            <td>{{ manager.phone }}</td>
+            <td>{{ manager.email }}</td>
+            <td>{{ manager.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+{% endblock content %}
+
+
+
+

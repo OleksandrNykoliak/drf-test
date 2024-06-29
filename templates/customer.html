@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Клієнти</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ім'я</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Адреса</th>
+            <th scope="col">Email</th>
+            <th scope="col">Дата створення</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Обєкти нерухомості</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Назва</th>
+            <th scope="col">Адреса</th>
+            <th scope="col">Ціна</th>
+            <th scope="col">Дата створення</th>
+            <th scope="col">Менеджер</th>
+            <th scope="col">Власник</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for real_estate in real_estates %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ real_estate.name }}</td>
+            <td>{{ real_estate.address }}</td>
+            <td>{{ real_estate.price }}</td>
+            <td>{{ real_estate.created_at }}</td>
+            <td>{{ real_estate.manager.name }}</td>
+            <td>{{ real_estate.owner.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+{% endblock content %}
+
+
+
+
